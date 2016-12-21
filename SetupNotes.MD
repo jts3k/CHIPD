@@ -9,3 +9,7 @@ Step 4: Checked out [this tutorial](https://www.hackster.io/11802/c-h-i-p-midi-a
 Step 5.  Need audio input so looking for fixes.  Tried running PD in "realtime" mode via ```pd -rt``` in terminal.  No luck.  Tried running without GUI via ```pd -nogui -rt```.  No luck.
 
 Side note, terminal command to find the CHIP IP: ```curl ipinfo.io/ip```
+
+Step 6.  Success!  Audio in/out running glitch-free when PD uses [this](https://www.adafruit.com/products/1475) cheap lil' USB audio interface.
+
+Step 7.  To launch PD from terminal with all the right configs: ```pd -r 44100 -audiodev 3 -channels 1 -nogui -rt /home/chip/Documents/name-of-the-patch.pd```
