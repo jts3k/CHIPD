@@ -1,4 +1,4 @@
-#N canvas 0 22 1366 667 10;
+#N canvas 11 28 1366 667 10;
 #X obj 215 138 tabwrite~ record;
 #X msg 290 63 bang;
 #X msg 319 91 stop;
@@ -99,14 +99,14 @@
 #X text 930 77 0;
 #X text 966 77 256;
 #X obj 1291 231 line;
-#X obj 1303 18 r rec-dur;
+#X obj 1303 -1 r rec-dur;
 #X obj 1234 68 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 1288 128 pack 0 0 0;
 #X floatatom 1322 88 5 0 0 0 - - -, f 5;
-#X floatatom 1381 91 5 0 0 0 - - -, f 5;
+#X floatatom 1372 91 5 0 0 0 - - -, f 5;
 #X msg 1296 166 \$1 \, \$2 \$3;
-#N canvas 218 22 1341 667 grain 1;
+#N canvas 218 22 1341 667 grain 0;
 #X obj 469 954 outlet~;
 #X obj 490 814 tabread4~ record;
 #X obj 461 685 *~;
@@ -348,8 +348,21 @@
 #X connect 21 0 12 1;
 #X connect 21 0 13 1;
 #X restore 258 283 pd grain;
-#X obj 1305 55 t b f f;
+#X obj 1305 36 t b f f;
 #X floatatom 864 410 5 0 0 0 - - -, f 5;
+#X obj 705 147 key;
+#X obj 704 251 t 1;
+#X obj 773 142 keyup;
+#X obj 771 245 t 0;
+#X obj 1375 64 * 4;
+#X obj 706 181 change;
+#X obj 774 176 change;
+#X obj 770 276 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 702 278 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 703 218 sel 49;
+#X obj 770 212 sel 50;
 #X connect 1 0 0 0;
 #X connect 2 0 0 0;
 #X connect 4 0 3 0;
@@ -420,4 +433,15 @@
 #X connect 79 0 36 0;
 #X connect 80 0 62 0;
 #X connect 80 1 63 0;
-#X connect 80 2 64 0;
+#X connect 80 2 86 0;
+#X connect 82 0 87 0;
+#X connect 83 0 90 0;
+#X connect 84 0 88 0;
+#X connect 85 0 89 0;
+#X connect 86 0 64 0;
+#X connect 87 0 91 0;
+#X connect 88 0 92 0;
+#X connect 89 0 11 0;
+#X connect 90 0 11 0;
+#X connect 91 0 83 0;
+#X connect 92 0 85 0;

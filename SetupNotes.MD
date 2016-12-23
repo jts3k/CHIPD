@@ -12,4 +12,4 @@ Side note, terminal command to find the CHIP IP: ```curl ipinfo.io/ip```
 
 Step 6.  Success!  Audio in/out running glitch-free when PD uses [this](https://www.adafruit.com/products/1475) cheap lil' USB audio interface.
 
-Step 7.  To launch PD from terminal with all the right configs: ```pd -r 44100 -audiodev 3 -channels 1 -nogui -rt /home/chip/Documents/name-of-the-patch.pd```
+Step 7.  To launch PD from terminal with all the right configs: ```pd -r 44100 -audiodev 3 -channels 1 -nogui -rt /home/chip/Documents/name-of-the-patch.pd``` (no gui) ```pd -r 44100 -audiodev 3 -channels 1 -rt /home/chip/Documents/name-of-the-patch.pd``` (with gui)
