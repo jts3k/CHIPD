@@ -1,4 +1,4 @@
-#N canvas 244 68 1623 928 10;
+#N canvas 0 22 1366 667 10;
 #X obj 215 138 tabwrite~ record;
 #X msg 290 63 bang;
 #X msg 319 91 stop;
@@ -128,7 +128,7 @@
 #X floatatom 1217 97 5 0 0 0 - - -, f 5;
 #X obj 1284 125 * 1;
 #X obj 1313 98 t b f;
-#N canvas 924 392 1359 595 controls 0;
+#N canvas 85 54 1359 595 controls 0;
 #X floatatom 71 411 5 0 0 0 - - -, f 5;
 #X obj 78 538 s pitch;
 #X obj 91 62 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
@@ -137,7 +137,7 @@
 #X obj 258 74 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
 #X obj 418 81 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 6700 1;
+-1 -1 0 1;
 #X obj 420 321 s speed;
 #X obj 335 462 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -283,7 +283,7 @@
 #X msg 820 326 0;
 #X obj 750 323 s ran-size;
 #X obj 922 82 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 8800 1;
 #X obj 995 266 loadbang;
 #X floatatom 922 296 5 0 0 0 - - -, f 5;
 #X obj 146 386 del 2000;
@@ -339,9 +339,9 @@
 #X obj 752 31 ctlin 14;
 #X obj 924 322 s vol;
 #X obj 926 30 ctlin 19;
-#X obj 921 242 expr $f1/127;
 #X msg 994 325 1;
 #X obj 747 243 expr $f1/127 * 50;
+#X obj 921 242 expr $f1/64;
 #X connect 0 0 42 0;
 #X connect 2 0 38 0;
 #X connect 2 0 49 0;
@@ -359,18 +359,18 @@
 #X connect 17 0 20 0;
 #X connect 18 0 17 0;
 #X connect 19 0 17 0;
-#X connect 21 0 58 0;
+#X connect 21 0 57 0;
 #X connect 22 0 32 0;
 #X connect 23 0 25 0;
 #X connect 24 0 23 0;
-#X connect 26 0 56 0;
+#X connect 26 0 58 0;
 #X connect 27 0 33 0;
 #X connect 28 0 54 0;
 #X connect 29 0 10 0;
 #X connect 30 0 13 0;
 #X connect 31 0 19 0;
 #X connect 32 0 24 0;
-#X connect 33 0 57 0;
+#X connect 33 0 56 0;
 #X connect 34 0 35 0;
 #X connect 35 0 37 0;
 #X connect 36 0 2 0;
@@ -394,8 +394,8 @@
 #X connect 53 0 21 0;
 #X connect 55 0 26 0;
 #X connect 56 0 28 0;
-#X connect 57 0 28 0;
-#X connect 58 0 23 0;
+#X connect 57 0 23 0;
+#X connect 58 0 28 0;
 #X restore 735 46 pd controls;
 #X obj 1357 64 r speed;
 #X obj 1018 158 r record-start-stop;
