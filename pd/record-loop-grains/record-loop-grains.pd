@@ -72,7 +72,7 @@
 #X text 966 77 256;
 #X obj 1367 207 r rec-dur;
 #X floatatom 867 397 5 0 0 0 - - -, f 5;
-#N canvas 371 310 1238 628 setup 1;
+#N canvas 371 310 1238 628 setup 0;
 #X obj 60 41 loadbang;
 #X msg 35 175 \; pd dsp 1;
 #X obj 63 96 del 2000;
@@ -128,16 +128,16 @@
 #X floatatom 1217 97 5 0 0 0 - - -, f 5;
 #X obj 1284 125 * 1;
 #X obj 1313 98 t b f;
-#N canvas 85 54 1359 595 controls 1;
+#N canvas 85 54 1359 595 controls 0;
 #X floatatom 71 411 5 0 0 0 - - -, f 5;
 #X obj 78 538 s pitch;
 #X obj 91 62 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 9500 1;
 #X obj 257 299 s grain-size;
 #X obj 258 74 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
 #X obj 418 81 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 11900 1;
 #X obj 420 321 s speed;
 #X obj 335 462 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -283,7 +283,7 @@
 #X msg 820 326 0;
 #X obj 750 323 s ran-size;
 #X obj 922 82 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 400 1;
 #X obj 995 266 loadbang;
 #X floatatom 922 296 5 0 0 0 - - -, f 5;
 #X obj 146 386 del 2000;
@@ -305,7 +305,7 @@
 #X obj 216 501 spigot;
 #X obj 244 471 == 64;
 #X obj 210 537 == 0;
-#X obj 119 476 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 119 476 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X floatatom 119 163 5 0 0 0 - - -, f 5;
 #N canvas 0 22 660 537 scale 0;
@@ -355,14 +355,21 @@
 #X obj 318 295 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 309 342 i;
-#X floatatom 295 400 5 0 0 0 - - -, f 5;
 #X obj 363 344 + 1;
 #X obj 389 317 >= 8;
 #X obj 392 356 sel 1;
 #X msg 390 383 0;
-#X msg 295 446 \; pd audio-dialog \$1 0 0 0 1 0 0 0 \$1 0 0 0 2 0 0
+#X msg 393 446 \; pd audio-dialog \$1 0 0 0 1 0 0 0 \$1 0 0 0 2 0 0
 0 44100 25 0 64;
+#X floatatom 327 95 5 0 0 0 - - -, f 5;
+#X msg 147 491 \; pd dsp 1;
+#X obj 157 443 del 30;
+#X obj 226 439 makenote 100 50;
+#X obj 221 381 t b b f;
+#X msg 234 416 60;
+#X obj 234 500 noteout;
 #X connect 0 0 1 0;
+#X connect 0 0 16 0;
 #X connect 1 0 2 1;
 #X connect 2 0 7 0;
 #X connect 3 0 4 0;
@@ -376,12 +383,18 @@
 #X connect 9 0 10 0;
 #X connect 10 0 11 0;
 #X connect 10 0 12 0;
-#X connect 10 0 13 0;
-#X connect 11 0 16 0;
-#X connect 12 0 10 1;
+#X connect 10 0 20 0;
+#X connect 11 0 10 1;
+#X connect 12 0 13 0;
 #X connect 13 0 14 0;
-#X connect 14 0 15 0;
-#X connect 15 0 10 1;
+#X connect 14 0 10 1;
+#X connect 18 0 17 0;
+#X connect 19 0 22 0;
+#X connect 19 1 22 1;
+#X connect 20 0 18 0;
+#X connect 20 1 21 0;
+#X connect 20 2 15 0;
+#X connect 21 0 19 0;
 #X restore 516 423 pd change-audio-settings;
 #X connect 0 0 42 0;
 #X connect 2 0 38 0;
